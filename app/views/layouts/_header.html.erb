@@ -1,10 +1,9 @@
 <div class="header">
-	<div class="container">
-		<% if user_signed_in? %>
-    		<span>Здравствуйте, <%= current_user.name %>!</span>
-    		<span class="pull-right"><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>  или <%= link_to 'Редактировать профиль', edit_user_registration_path %></span>
-		<% else %>
-    		<span class="pull-right"><%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %></span>
-		<% end %>
-	</div>
+	<% if user_signed_in? %>
+		<p class="pull-right"><%= link_to 'Главная', root_path %> <%= link_to 'Заметки', notes_path %> <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %> <%= link_to 'Редактировать профиль', edit_user_registration_path %></p>
+		<p>Здравствуйте, <%= current_user.name %>!</p>
+		
+	<% else %>
+		<span class="pull-right"><%= link_to 'Войти', new_user_session_path %> <%= link_to 'Зарегистрироваться', new_user_registration_path %></span>
+	<% end %>
 </div>

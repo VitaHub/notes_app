@@ -1,31 +1,31 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Редактировать  профиль</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :login %><br />
+    <%= f.label :login, "Логин" %><br />
     <%= f.text_field :login, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Имя" %><br />
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :fullname %><br />
+    <%= f.label :fullname, "Фамилия" %><br />
     <%= f.text_field :fullname %>
   </div>
 
   <div class="field">
-    <%= f.label :phone %><br />
+    <%= f.label :phone, "Номер телефона" %><br />
     <%= f.text_field :phone %>
   </div>
 
   <div class="field">
-    <%= f.label :birthdate %><br />
-    <%= f.date_select :birthdate %>
+    <%= f.label :birthdate, "Дата рождения" %><br />
+    <%= f.date_select :birthdate, start_year: 1960 %>
   </div>
 
   <div class="field">
@@ -34,11 +34,11 @@
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div>Все еще ожидаем подтверждения регистрации от: <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i>(оставьте путым, если не хотите менять)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
@@ -48,17 +48,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i>(введите текущий пароль для подтверждения изменений)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Обновить" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>Удаление профиля</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= button_to "Удалить мой профиль", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Назад", :back %>

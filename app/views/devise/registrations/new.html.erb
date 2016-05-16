@@ -1,42 +1,42 @@
-<h2>Sign up</h2>
+<h2>Регистрация</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :login %><br />
+    <%= f.label :login, "Логин" %><br />
     <%= f.text_field :login, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Имя" %><br />
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :fullname %><br />
+    <%= f.label :fullname, "Фамилия" %><br />
     <%= f.text_field :fullname %>
   </div>
 
   <div class="field">
-    <%= f.label :phone %><br />
+    <%= f.label :phone, "Номер телефона" %><br />
     <%= f.text_field :phone %>
   </div>
 
   <div class="field">
-    <%= f.label :birthdate %><br />
+    <%= f.label :birthdate, "Дата рождения" %><br />
     <%= f.date_select :birthdate, start_year: 1960 %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email %>
+    <%= f.email_field :email, autocomplete: "off" %>
   </div>
 
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> <%=Russian.p(@minimum_password_length, 'символ', 'символа', 'символов')%> минимум)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
@@ -47,7 +47,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Регистрация" %>
   </div>
 <% end %>
 
