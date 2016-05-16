@@ -1,0 +1,7 @@
+<li class="list-group-item clearfix">
+	<h5 class="pull-right">
+		<small class="text-uppercase">Отправлено </small>
+					<%= time_ago_in_words(note.created_at) %> назад
+	</h5>
+	<h4><%= link_to note.title, note %></h4>
+</li>

@@ -1,0 +1,6 @@
+<h3><%= @note.title %></h3>
+<p><%= simple_format @note.content %></p>
+<div class="actions">
+	<%= link_to "Редактировать", edit_note_path %>
+	<%= link_to "Удалить", note_path, data: { confirm: "Вы уверены?" }, method: :delete %>
+</div>

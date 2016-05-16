@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'cv#index'
 
   get 'notes' => 'notes#index', as: 'user_root'
-  resources :notes, only: [:index]
+  resources :notes
 
 end

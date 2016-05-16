@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+users = User.all
+user  = users.first
+
+99.times do |n|
+  user.notes.create!(	title: 		Faker::Book.title,
+               			content: 	Faker::Hipster.paragraphs(1))
+end

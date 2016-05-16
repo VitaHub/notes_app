@@ -1,0 +1,19 @@
+<% if @note.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      Поля не могут быть пустыми.
+    </div>
+  </div>
+<% end %>
+
+<%= form_for(@note) do |f| %> 
+	<div class="field">   
+    	<%= f.text_field :title, :placeholder => "Тема" %>
+    </div>
+    <div class="field">
+    	<%= f.text_area :content, style: "height: 300px;" %>
+    </div>
+    <div class="actions">
+    	<%= f.submit "Сохранить" %>
+    </div>
+<% end %>
