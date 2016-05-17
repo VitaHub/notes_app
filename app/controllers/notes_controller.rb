@@ -2,7 +2,7 @@ class NotesController < ApplicationController
 	before_filter :authenticate_user!
 	
 	def index
-		@notes = current_user.notes
+		@notes = current_user.notes.order(:created_at).paginate(:page => params[:page], :per_page => 20)
 	end
 
 	def show

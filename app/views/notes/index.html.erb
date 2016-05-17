@@ -1,8 +1,10 @@
+
 <div>
 	<%= link_to "Добавить заметку", new_note_path, class: "btn btn-primary btn-sm pull-right", style: "margin: 0 0 20px" %>
 	<h2 style="text-align: left;">Заметки</h2>
 </div>
-
-<ol class="list-group">
-  	<%= render @notes %>
+<ol class="list-group" id="notes">
+	<%= render @notes %>
 </ol>
+
+<%= will_paginate @notes %>
